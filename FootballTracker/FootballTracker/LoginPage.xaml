@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootballTracker.LoginPage"
+             BackgroundColor="#112847">
+    <ContentPage.Content>
+        <StackLayout Padding="40" VerticalOptions="Center">
+            <Entry x:Name="email" Keyboard="Email" Placeholder="Email" TextColor="White" PlaceholderColor="Gray" />
+            <Entry x:Name="password" IsPassword="True" Placeholder="Hasło" TextColor="White" PlaceholderColor="Gray" />
+            <Button
+                VerticalOptions="Center"
+                Text="Zaloguj się"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                BorderColor="ForestGreen"
+                BorderWidth="1.5"
+                CornerRadius="50"
+                Clicked="Button_Clicked">
+            </Button>
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Don't have an account?" TextColor="Gray"/>
+                        <Span Text="Register" TextColor="Gray" FontAttributes="Bold" TextDecorations="Underline"/>
+                    </FormattedString>
+                </Label.FormattedText>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
