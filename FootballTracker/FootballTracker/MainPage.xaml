@@ -1,11 +1,87 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootballTracker.MainPage"
+             BackgroundColor="Black">
 
-             x:Class="FootballTracker.MainPage">
-    <ContentPage Title="Główna" />
-    <ContentPage Title="Mecze" />
-    <ContentPage Title="Profil" />
+    <StackLayout>
+        <StackLayout HeightRequest="50" Padding="15,5,0,0">
+            <Label Text="twoja drużyna" TextTransform="Uppercase" TextColor="White" FontSize="24" FontAttributes="Bold" VerticalOptions="CenterAndExpand" CharacterSpacing="1.5"/>
+        </StackLayout>
+        <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
 
-</TabbedPage>
+        <Label Text="poprzednie mecze" TextTransform="Uppercase" TextColor="White" Margin="15,20,0,10" FontSize="18" CharacterSpacing="1.5" FontAttributes="Bold"/>
+
+        <StackLayout BackgroundColor="#161616" Margin="15,0,15,10" Orientation="Horizontal" Padding="20, 20, 20, 20">
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,0,30,0">
+                <StackLayout HorizontalOptions="StartAndExpand">
+                    <Frame CornerRadius="1000" HeightRequest="50" WidthRequest="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="" Aspect="AspectFill"/>
+                    </Frame>
+                    <Label Text="Team 1" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="2 : 1" TextColor="#a0a0a0" FontSize="18"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="EndAndExpand">
+                    <Frame CornerRadius="1000" HeightRequest="50" WidthRequest="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source=""/>
+                    </Frame>
+                    <Label Text="Team 1" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="StartAndExpand">
+                    <Frame CornerRadius="1000" HeightRequest="50" WidthRequest="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="" Aspect="AspectFill"/>
+                    </Frame>
+                    <Label Text="Team 1" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="2 : 1" TextColor="#a0a0a0" FontSize="18"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="EndAndExpand">
+                    <Frame CornerRadius="1000" HeightRequest="50" WidthRequest="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source=""/>
+                    </Frame>
+                    <Label Text="Team 1" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+        <Label Text="najbliższy mecz" TextTransform="Uppercase" TextColor="White"   Margin="15,20,0,10" FontSize="18" CharacterSpacing="1.5" FontAttributes="Bold"/>
+
+        <StackLayout BackgroundColor="#161616" Orientation="Vertical" VerticalOptions="FillAndExpand" Margin="15,0,15,10">
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20, 90, 20, 60">
+                <StackLayout HorizontalOptions="StartAndExpand">
+                    <Frame CornerRadius="1000" HeightRequest="100" WidthRequest="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,10">
+                        <Image Source="" Aspect="AspectFill"/>
+                    </Frame>
+                    <Label Text="Team 1" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="20:45" TextColor="#a0a0a0" FontSize="18" CharacterSpacing="2.5" FontAttributes="Bold"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="EndAndExpand">
+                    <Frame CornerRadius="1000" HeightRequest="100" WidthRequest="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,10">
+                        <Image Source=""/>
+                    </Frame>
+                    <Label Text="Team 1" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+                </StackLayout>
+            </StackLayout>
+
+            <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+            <Button Text="wyświetl tabelę >" BackgroundColor="Transparent" TextColor="#747474" CharacterSpacing="2" FontAttributes="Bold" FontSize="14" HeightRequest="40"></Button>
+            <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

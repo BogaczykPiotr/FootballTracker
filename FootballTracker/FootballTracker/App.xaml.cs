@@ -10,7 +10,7 @@ namespace FootballTracker
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new Tabbed();
         }
 
         protected override void OnStart()
