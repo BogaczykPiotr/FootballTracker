@@ -2,26 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FootballTracker.LoginPage"
-             BackgroundColor="#112847">
-    <ContentPage.Content>
-        <StackLayout Padding="40" VerticalOptions="Center">
-            <Entry x:Name="email" Keyboard="Email" Placeholder="Email" TextColor="White" PlaceholderColor="Gray" />
-            <Entry x:Name="password" IsPassword="True" Placeholder="Hasło" TextColor="White" PlaceholderColor="Gray" />
+             BackgroundColor="#000">
+    <StackLayout>
+        <StackLayout HeightRequest="50" Padding="15,5,0,0">
+            <Label Text="zaloguj się" TextTransform="Uppercase" TextColor="White" FontSize="24" FontAttributes="Bold" VerticalOptions="CenterAndExpand" CharacterSpacing="1.5"/>
+        </StackLayout>
+        <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+
+        <StackLayout BackgroundColor="#161616" Margin="15, 0" Padding="20,40,20,40" VerticalOptions="CenterAndExpand">
+            <Entry x:Name="email" Keyboard="Email" Placeholder="Email" TextColor="#a0a0a0" PlaceholderColor="#a0a0a0" ClearButtonVisibility="WhileEditing" Margin="0,0,0,10" />
+            <Entry x:Name="password" IsPassword="True" Placeholder="Hasło" TextColor="#a0a0a0" PlaceholderColor="#a0a0a0" ClearButtonVisibility="WhileEditing"  Margin="0,0,0,30"/>
             <Button
                 VerticalOptions="Center"
                 Text="Zaloguj się"
-                TextColor="White"
+                TextColor="#ccc"
                 BackgroundColor="Transparent"
-                BorderColor="ForestGreen"
-                BorderWidth="1.5"
-                CornerRadius="50"
-                Clicked="Button_Clicked">
+                BorderColor="#a0a0a0"
+                BorderWidth="2"
+                CornerRadius="10"
+                Clicked="Button_Clicked"
+                Margin="0,0,0,10">
             </Button>
             <Label HorizontalOptions="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Don't have an account?" TextColor="Gray"/>
-                        <Span Text="Register" TextColor="Gray" FontAttributes="Bold" TextDecorations="Underline"/>
+                        <Span Text="Nie masz konta? " TextColor="#a0a0a0"/>
+                        <Span Text="Zarejestruj się" TextColor="#ccc" FontAttributes="Bold" TextDecorations="Underline"/>
                     </FormattedString>
                 </Label.FormattedText>
                 <Label.GestureRecognizers>
@@ -29,5 +35,5 @@
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>
-    </ContentPage.Content>
+    </StackLayout>
 </ContentPage>

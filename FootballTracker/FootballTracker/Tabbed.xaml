@@ -2,12 +2,30 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:FootballTracker"
+            xmlns:fontAwesome="clr-namespace:FontAwesome"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
             x:Class="FootballTracker.Tabbed"
             BarBackgroundColor="Black"
-            BarTextColor="White"
-            BackgroundColor="Black">
-    <local:MainPage Title="Główna"/>
-    <local:LoginPage Title="Zaloguj"/>
+            BarTextColor="white"
+            BackgroundColor="Black"
+            UnselectedTabColor="#a0a0a0"
+            SelectedTabColor="White">
+    <local:MainPage Title="GŁÓWNA" >
+        <local:MainPage.IconImageSource>
+            <FontImageSource FontFamily="FASolid" Glyph="{x:Static fontAwesome:FontAwesomeIcons.House}"/>
+        </local:MainPage.IconImageSource>
+    </local:MainPage>
+
+    <local:MatchesPage Title="MECZE">
+        <local:MatchesPage.IconImageSource>
+            <FontImageSource FontFamily="FARegular" Glyph="{x:Static fontAwesome:FontAwesomeIcons.Futbol}"/>
+        </local:MatchesPage.IconImageSource>
+    </local:MatchesPage>
+
+    <local:LoggedPage Title="PROFIL">
+        <local:LoggedPage.IconImageSource>
+            <FontImageSource FontFamily="FASolid" Glyph="{x:Static fontAwesome:FontAwesomeIcons.User}"/>
+        </local:LoggedPage.IconImageSource>
+    </local:LoggedPage>
 </TabbedPage>
