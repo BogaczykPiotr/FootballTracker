@@ -1,4 +1,5 @@
-﻿using FootballTracker.Models;
+﻿using FootballTracker.Entities;
+using FootballTracker.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;

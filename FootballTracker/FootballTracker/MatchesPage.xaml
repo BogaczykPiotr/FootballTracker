@@ -38,32 +38,37 @@
                     <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
 
                     <!-- Pierwszy mecz -->
-                    <StackLayout Orientation="Horizontal" Padding="20">
-                        <StackLayout HorizontalOptions="FillAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,0,0,10">
-                                <StackLayout Orientation="Horizontal">
-                                    <Frame CornerRadius="1000" HeightRequest="32" WidthRequest="32" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
-                                        <Image Source="" Aspect="AspectFill"/>
-                                    </Frame>
-                                    <Label Text="team 1" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
-                                </StackLayout>
-                                <Label Text="1" TextColor="white" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout Orientation="Horizontal">
-                                    <Frame CornerRadius="1000" HeightRequest="32" WidthRequest="32" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
-                                        <Image Source="" Aspect="AspectFill"/>
-                                    </Frame>
-                                    <Label Text="team 2" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
-                                </StackLayout>
-                                <Label Text="2" TextColor="white" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
-                            </StackLayout>
-                        </StackLayout>
-                        <StackLayout VerticalOptions="Center" HorizontalOptions="EndAndExpand">
-                            <Label Text="20:45" TextColor="White" FontSize="24"/>
-                        </StackLayout>
-                    </StackLayout>
-                    <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+                        <ListView x:Name="listView" RowHeight="70">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal" Padding="20">
+                                            <StackLayout HorizontalOptions="FillAndExpand">
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,0,0,10">
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Frame CornerRadius="1000" HeightRequest="32" WidthRequest="32" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
+                                                            <Image Source="" Aspect="AspectFill"/>
+                                                        </Frame>
+                                                        <Label Text="{Binding Home}" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+                                                    </StackLayout>
+                                                    <Label Text="vs" TextColor="white" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Frame CornerRadius="1000" HeightRequest="32" WidthRequest="32" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
+                                                            <Image Source="" Aspect="AspectFill"/>
+                                                        </Frame>
+                                                        <Label Text="{Binding Away}" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                                <StackLayout VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+                                                    <Label Text="{Binding Time}" TextColor="White" FontSize="24"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
 
                     <StackLayout Orientation="Horizontal" Padding="20">
                         <StackLayout HorizontalOptions="FillAndExpand">

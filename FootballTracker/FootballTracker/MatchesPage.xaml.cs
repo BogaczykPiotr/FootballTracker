@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
+using FootballTracker.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,9 +11,18 @@ namespace FootballTracker
         public MatchesPage()
         {
             InitializeComponent();
+            LoadMatches();
+
             var swipeGesture = new SwipeGestureRecognizer();
             swipeGesture.Swiped += OnSwiped;
             DateSlider.GestureRecognizers.Add(swipeGesture);
+        }
+
+        private async void LoadMatches()
+        {
+            IApiService apiService = new ApiService();
+            var matches = await apiService.GetMatches();
+            listView.ItemsSource = matches;
         }
 
         void OnSwiped(object sender, SwipedEventArgs e)
@@ -33,5 +38,7 @@ namespace FootballTracker
                 DateSlider.TranslateTo(100, 0, 500, Easing.Linear);
             }
         }
+
+       
     }
 }
