@@ -2,130 +2,50 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FootballTracker.MatchesPage">
-    <Grid>
-        <!-- Ustalona górna sekcja -->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
 
-        <StackLayout Grid.Row="0">
-            <StackLayout HeightRequest="50" Padding="15,5,0,0">
-                <Label Text="Mecze" TextTransform="Uppercase" TextColor="White" FontSize="24" FontAttributes="Bold" VerticalOptions="CenterAndExpand" CharacterSpacing="1.5"/>
-            </StackLayout>
-            <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
-            <ScrollView Orientation="Horizontal">
-                <StackLayout Orientation="Horizontal" x:Name="DateSlider" Margin="0, 20, 0, 20">
-                    <Button Text="14.05" Margin="0, 0, 10, 0" HeightRequest="40" WidthRequest="100" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" BackgroundColor="#161616" TextColor="White" CornerRadius="10" TextTransform="Lowercase"/>
-                    <Button Text="wczoraj" Margin="0, 0, 10, 0" HeightRequest="40" WidthRequest="100" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" BackgroundColor="#161616" TextColor="White" CornerRadius="10" TextTransform="Lowercase"/>
-                    <Button Text="dziś" Margin="0, 0, 10, 0" BorderWidth="1" BorderColor="White" HeightRequest="40" WidthRequest="100" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" BackgroundColor="#161616" TextColor="White" CornerRadius="10" TextTransform="Lowercase"/>
-                    <Button Text="jutro" Margin="0, 0, 10, 0" HeightRequest="40" WidthRequest="100" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" BackgroundColor="#161616" TextColor="White" CornerRadius="10" TextTransform="Lowercase"/>
-                    <Button Text="18.05" HeightRequest="40" WidthRequest="100" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" BackgroundColor="#161616" TextColor="White" CornerRadius="10" TextTransform="Lowercase"/>
-                </StackLayout>
-            </ScrollView>
+    <StackLayout>
+        <StackLayout HeightRequest="50" Padding="15,5,0,0">
+            <Label Text="Mecze" TextTransform="Uppercase" TextColor="White" FontSize="24" FontAttributes="Bold" VerticalOptions="CenterAndExpand" CharacterSpacing="1.5"/>
         </StackLayout>
+        <BoxView Color="#555" HeightRequest="0.5" HorizontalOptions="FillAndExpand"/>
+
 
         <!-- Przewijana zawartość -->
-        <ScrollView Grid.Row="1">
-            <StackLayout>
-                <StackLayout BackgroundColor="#161616" Orientation="Vertical" VerticalOptions="FillAndExpand" Margin="15,0,15,10" Padding="0,0,0,20">
-                    <StackLayout Orientation="Horizontal" Padding="20,20,20,10">
-                        <Frame CornerRadius="1000" HeightRequest="32" WidthRequest="32" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
-                            <Image Source="" Aspect="AspectFill"/>
-                        </Frame>
-                        <Label Text="LALIGA" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14" TextTransform="Uppercase"/>
-                    </StackLayout>
-                    <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
-
-                    <!-- Pierwszy mecz -->
-
-                        <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
-                    <ListView x:Name="listView" RowHeight="70">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <StackLayout Orientation="Horizontal" Padding="20">
-                                        <StackLayout HorizontalOptions="FillAndExpand">
-                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,0,0,10">
-                                                <StackLayout Orientation="Horizontal">
-                                                    <Frame CornerRadius="1000" HeightRequest="32" WidthRequest="32" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
-                                                        <Image Source="{Binding HomeLogo}" Aspect="AspectFill"/>
-                                                    </Frame>
-                                                    <Label Text="{Binding Home}" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
-                                                </StackLayout>
-                                                <Label Text="{Binding GoalHome}" TextColor="white" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
-                                            </StackLayout>
+        <ScrollView>
+            <StackLayout BackgroundColor="#161616" Orientation="Vertical" VerticalOptions="Start" Margin="15,0,15,10" Padding="0,0,0,20">
+                <!-- Pierwszy mecz -->
+                <ListView x:Name="listView" HasUnevenRows="True" SeparatorVisibility="Default" SeparatorColor="#555"> 
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="20">
+                                    <StackLayout HorizontalOptions="FillAndExpand">
+                                        <StackLayout Orientation="Horizontal" Padding="0,0,0,10">
                                             <StackLayout Orientation="Horizontal">
-                                                <StackLayout Orientation="Horizontal">
-                                                    <Frame CornerRadius="1000" HeightRequest="32" WidthRequest="32" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
-                                                        <Image Source="{Binding AwayLogo}" Aspect="AspectFill"/>
-                                                    </Frame>
-                                                    <Label Text="{Binding Away}" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
-                                                </StackLayout>
-                                                <Label Text="{Binding GoalAway}" TextColor="white" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
+                                                <Frame BackgroundColor="Transparent" CornerRadius="0" HeightRequest="32" WidthRequest="32" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
+                                                    <Image Source="{Binding HomeLogo}" Aspect="AspectFill"/>
+                                                </Frame>
+                                                <Label Text="{Binding Home}" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="18"/>
                                             </StackLayout>
+                                            <Label Text="{Binding GoalHome}" TextColor="white" FontSize="18" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
                                         </StackLayout>
-                                        <StackLayout VerticalOptions="Center" HorizontalOptions="EndAndExpand">
-                                            <Label Text="Teraz" TextColor="White" FontSize="24"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Frame BackgroundColor="Transparent" CornerRadius="0" HeightRequest="32" WidthRequest="32" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
+                                                    <Image Source="{Binding AwayLogo}" Aspect="AspectFill"/>
+                                                </Frame>
+                                                <Label Text="{Binding Away}" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="18"/>
+                                            </StackLayout>
+                                            <Label Text="{Binding GoalAway}" TextColor="white" FontSize="18" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
                                         </StackLayout>
                                     </StackLayout>
-                                </ViewCell>
-                     </DataTemplate>
-                     </ListView.ItemTemplate>
-                     </ListView>
-
-
-                    <!-- Dodaj więcej meczy tutaj -->
-
-                    <Button Text="wyświetl tabelę >" BackgroundColor="Transparent" TextColor="#747474" CharacterSpacing="2" FontAttributes="Bold" FontSize="14" HeightRequest="40"/>
-                    <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
-
-                <!-- Dodaj kolejne sekcje meczów w podobny sposób -->
-
-                <StackLayout BackgroundColor="#161616" Orientation="Vertical" VerticalOptions="FillAndExpand" Margin="15,0,15,10" Padding="0,0,0,20">
-                    <StackLayout Orientation="Horizontal" Padding="20,20,20,10">
-                        <Frame CornerRadius="1000" HeightRequest="32" WidthRequest="32" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
-                            <Image Source="" Aspect="AspectFill"/>
-                        </Frame>
-                        <Label Text="liże" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14" TextTransform="Uppercase"/>
-                    </StackLayout>
-                    <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
-
-                    <!-- Pierwszy mecz -->
-                    <StackLayout Orientation="Horizontal" Padding="20">
-                        <StackLayout HorizontalOptions="FillAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,0,0,10">
-                                <StackLayout Orientation="Horizontal">
-                                    <Frame CornerRadius="1000" HeightRequest="32" WidthRequest="32" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
-                                        <Image Source="" Aspect="AspectFill"/>
-                                    </Frame>
-                                    <Label Text="team 1" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
                                 </StackLayout>
-                                <Label Text="1" TextColor="white" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout Orientation="Horizontal">
-                                    <Frame CornerRadius="1000" HeightRequest="32" WidthRequest="32" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
-                                        <Image Source="" Aspect="AspectFill"/>
-                                    </Frame>
-                                    <Label Text="team 2" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
-                                </StackLayout>
-                                <Label Text="2" TextColor="white" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
-                            </StackLayout>
-                        </StackLayout>
-                        <StackLayout VerticalOptions="Center" HorizontalOptions="EndAndExpand">
-                            <Label Text="20:45" TextColor="White" FontSize="24"/>
-                        </StackLayout>
-                    </StackLayout>
-                    <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
-                    <!-- Dodaj więcej meczy tutaj -->
+                            </ViewCell>
 
-                    <Button Text="wyświetl tabelę >" BackgroundColor="Transparent" TextColor="#747474" CharacterSpacing="2" FontAttributes="Bold" FontSize="14" HeightRequest="40"/>
-                    <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
-
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
         </ScrollView>
-    </Grid>
+    </StackLayout>
 </ContentPage>

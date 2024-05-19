@@ -17,9 +17,10 @@ namespace FootballTracker
 	{
 		public LoggedPage ()
 		{
+            InitializeComponent();
             InitializeData();
 
-            InitializeComponent ();
+
         }
 
         private async void InitializeData()
@@ -29,6 +30,8 @@ namespace FootballTracker
             IApiService apiService = new ApiService();
 
             var team = await apiService.GetTeamName(favoriteTeam);
+
+            user.Text = App.UserName;
 
             BindingContext = team;
         }

@@ -12,8 +12,8 @@
         <StackLayout BackgroundColor="#161616" Margin="15, 0" Padding="20,40,20,40" VerticalOptions="CenterAndExpand">
             <Entry x:Name="email" Keyboard="Email"  Placeholder="Email" TextColor="#ccc" PlaceholderColor="#a0a0a0" ClearButtonVisibility="WhileEditing" Margin="0,0,0,10" />
             <Entry x:Name="userName" Placeholder="Nazwa użytkownika" TextColor="#ccc" PlaceholderColor="#a0a0a0" ClearButtonVisibility="WhileEditing" Margin="0,0,0,10"/>
-            <Entry x:Name="password" IsPassword="True"  Placeholder="Hasło" TextColor="#ccc" PlaceholderColor="#a0a0a0" ClearButtonVisibility="WhileEditing"  Margin="0,0,0,30"/>
-            <Picker TextColor="#ccc" x:Name="teams" Title="Wybierz ulubioną drużynę" SelectedIndexChanged="teams_SelectedIndexChanged">
+            <Entry x:Name="password" IsPassword="True"  Placeholder="Hasło" TextColor="#ccc" PlaceholderColor="#a0a0a0" ClearButtonVisibility="WhileEditing"  Margin="0,0,0,10"/>
+            <Picker x:Name="teams" Title="Wybierz ulubioną drużynę" SelectedIndexChanged="teams_SelectedIndexChanged" TitleColor="#a0a0a0" TextColor="#ccc" Margin="0,0,0,30">
                 <Picker.Items>
                     <x:String>Real Mardyt</x:String>
                     <x:String>FC Barcelona</x:String>
@@ -25,7 +25,7 @@
 
                 <Button
                 VerticalOptions="Center"
-                Text="Zaloguj się"
+                Text="Zarejestruj się"
                 TextColor="#ccc"
                 BackgroundColor="Transparent"
                 BorderColor="#a0a0a0"

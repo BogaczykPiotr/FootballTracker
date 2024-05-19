@@ -72,13 +72,14 @@ namespace FootballTracker
                 var result = await DisplayAlert("Sukces", "Użytkownik został zarejestrowany", "Ok", "Zamknij");
 
                 if (result)
-                    await Navigation.PushAsync(new LoginPage());
+                    Application.Current.MainPage = new LoginPage();
+
             });
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new LoginPage());
+            Application.Current.MainPage = new LoginPage();
         }
 
         private string HashPassword(string password)

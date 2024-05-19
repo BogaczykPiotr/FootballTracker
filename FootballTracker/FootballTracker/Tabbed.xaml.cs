@@ -23,7 +23,7 @@ namespace FootballTracker
         {
             if(App.IsUserLoggedIn)
             {
-                Children.Add(new NavigationPage(new LoggedPage())
+                Children.Add(new LoggedPage()
                 {
                     Title = "PROFIL",
                     IconImageSource = new FontImageSource
@@ -35,7 +35,7 @@ namespace FootballTracker
             }
             else
             {
-                Children.Add(new NavigationPage(new LoginPage())
+                Children.Add(new LoginPage()
                 {
                     Title = "ZALOGUJ",
                     IconImageSource = new FontImageSource

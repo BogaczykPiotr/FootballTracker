@@ -34,8 +34,10 @@ namespace FootballTracker
 
             if (query.Any())
             {
+                var user = query.FirstOrDefault();
                 App.IsUserLoggedIn = true;
-                App.Current.MainPage = new NavigationPage(new Tabbed());
+                App.UserName = user.UserName; 
+                App.Current.MainPage = new Tabbed();
                 
             }
             else
@@ -45,17 +47,17 @@ namespace FootballTracker
                     var result = await DisplayAlert("Błąd", "Błędny adres email lub hasło", "Ok", "Zamknij");
 
                     if (result)
-                        App.Current.MainPage = new NavigationPage(new LoginPage());
+                        App.Current.MainPage = new LoginPage();
 
                     else
-                    App.Current.MainPage = new NavigationPage(new Tabbed());
+                    App.Current.MainPage = new Tabbed();
                 });
             }
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new RegisterPage());
+            App.Current.MainPage = new RegisterPage();
         }
 
         private string HashPassword(string password)

@@ -7,6 +7,7 @@ namespace FootballTracker
     public partial class App : Application
     {
         public static bool IsUserLoggedIn { get; set; }
+        public static string UserName { get; set; }
         public App()
         {
             InitializeComponent();

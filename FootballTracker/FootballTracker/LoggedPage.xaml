@@ -9,7 +9,7 @@
         <BoxView Color="#555" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
 
         <StackLayout>
-            <Label Text="USERNAME" TextColor="White" FontSize="48" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,80,0,80"/>
+            <Label x:Name="user" TextColor="White" FontSize="48" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,80,0,80"/>
 
             <StackLayout BackgroundColor="#161616" Margin="15,0,15,10" Orientation="Vertical">
 
