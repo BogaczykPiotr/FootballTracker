@@ -25,7 +25,7 @@ namespace FootballTracker
 
         private async void InitializeData()
         {
-            var favoriteTeam = 33; //(int)Application.Current.Properties["FavoriteTeam"];
+            var favoriteTeam = (int)Application.Current.Properties["FavoriteTeam"]; // 123123123123
 
             IApiService apiService = new ApiService();
 

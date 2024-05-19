@@ -23,7 +23,7 @@ namespace FootballTracker
         }
         private async void InitializeData()
         {
-            var favoriteTeam = 33; //(int)Application.Current.Properties["FavoriteTeam"];
+            var favoriteTeam = (int)Application.Current.Properties["FavoriteTeam"]; // 123123123123
 
             IApiService apiService = new ApiService();
 
@@ -35,8 +35,8 @@ namespace FootballTracker
 
             
             prevMatch.BindingContext = previousMatch1;
-            prevMatch2.BindingContext = previousMatch1;
-            nMatch.BindingContext = previousMatch1;
+            prevMatch2.BindingContext = previousMatch2;
+            nMatch.BindingContext = nextMatch;
         }
     }
 }
