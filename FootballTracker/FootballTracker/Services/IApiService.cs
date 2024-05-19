@@ -9,6 +9,7 @@ namespace FootballTracker.Services
     internal interface IApiService
     {
         Task<List<Match>> GetMatches();
-        Task<JToken> GetApiResult();
+        Task<Team> GetTeamName(int id);
+        //Task<JToken> GetApiResult();
     }
 }

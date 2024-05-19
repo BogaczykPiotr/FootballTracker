@@ -15,53 +15,124 @@ namespace FootballTracker.Services
 {
     public class ApiService : IApiService
     {
-        public async Task<JToken> GetApiResult()
-        {
-            var client = new HttpClient();
-            var request = new HttpRequestMessage
-            {
-                Method = HttpMethod.Get,
-                RequestUri = new Uri("https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all"),
-                Headers =
-            {
-                { "X-RapidAPI-Key", "4cbcd3b2eemshcde42a8c44f8eadp1d2341jsncc344488b6e9" },
-                { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" },
-            },
-        };
-        using (var response = await client.SendAsync(request))
-        {
-            response.EnsureSuccessStatusCode();
-            var body = await response.Content.ReadAsStringAsync();
+        //public async Task<JToken> GetApiResult()
+        //{
+        //    var client = new HttpClient();
+        //    var request = new HttpRequestMessage
+        //    {
+        //        Method = HttpMethod.Get,
+        //        RequestUri = new Uri("https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all"),
+        //        Headers =
+        //    {
+        //        { "X-RapidAPI-Key", "4cbcd3b2eemshcde42a8c44f8eadp1d2341jsncc344488b6e9" },
+        //        { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" },
+        //    },
+        //};
+        //using (var response = await client.SendAsync(request))
+        //{
+        //    response.EnsureSuccessStatusCode();
+        //    var body = await response.Content.ReadAsStringAsync();
 
-            var json = JObject.Parse(body);
+        //    var json = JObject.Parse(body);
 
 
-            var fixtures = json["response"];
+        //    var fixtures = json["response"];
 
-                return fixtures;
-        }
-        }
+        //        return fixtures;
+        //}
+        //}
 
         public async Task<List<Match>> GetMatches()
         {
-            var json = await GetApiResult();
+            //var json = await GetApiResult();
+
+            //var matches = new List<Match>();
+            //for (int i = 0; i < json.Count(); i++)
+            //{
+            //    var fixture = json[i];
+            //    var match = new Match()
+            //    {
+            //        Home = fixture["teams"]["home"]["name"].ToString(),
+            //        HomeLogo = fixture["teams"]["home"]["logo"].ToString(),
+            //        Away = fixture["teams"]["away"]["name"].ToString(),
+            //        AwayLogo = fixture["teams"]["away"]["logo"].ToString(),
+            //        GoalHome = fixture["goals"]["home"].ToString(),
+            //        GoalAway = fixture["goals"]["away"].ToString(),
+            //    };
+
+            //    matches.Add(match);
+            //}
+
+            //return matches;
 
             var matches = new List<Match>();
-            for (int i = 0; i < json.Count(); i++)
-            {
-                var fixture = json[i];
-                var match = new Match()
+
+            var match = new Match()
                 {
-                    Home = fixture["teams"]["home"]["name"].ToString(),
-                    Away = fixture["teams"]["away"]["name"].ToString(),
-                    GoalHome = fixture["goals"]["home"].ToString(),
-                    GoalAway = fixture["goals"]["away"].ToString(),
+                    Home = "PSG",
+                    HomeLogo = "https://media.api-sports.io/football/teams/85.png",
+                    Away = "BvB",
+                    AwayLogo = "https://media.api-sports.io/football/teams/33.png",
+                    GoalHome = "3",
+                    GoalAway = "2"
                 };
 
-                matches.Add(match);
-            }
+            var match2 = new Match()
+            {
+                Home = "Real",
+                HomeLogo = "https://media.api-sports.io/football/teams/541.png",
+                Away = "Barca",
+                AwayLogo = "https://media.api-sports.io/football/teams/529.png",
+                GoalHome = "1",
+                GoalAway = "1"
+            };
+
+            matches.Add(match);
+            matches.Add(match2);
 
             return matches;
         }
+
+        public async Task<Team> GetTeamName(int id)
+        {
+            //        var favTeam = id;
+            //        var client = new HttpClient();
+            //        var request = new HttpRequestMessage
+            //        {
+            //            Method = HttpMethod.Get,
+            //            RequestUri = new Uri($"https://api-football-v1.p.rapidapi.com/v3/teams?id={favTeam}"),
+            //            Headers =
+            //{
+            //            { "X-RapidAPI-Key", "4cbcd3b2eemshcde42a8c44f8eadp1d2341jsncc344488b6e9" },
+            //            { "X-RapidAPI-Host", "api-football-v1.p.rapidapi.com" },
+            //},
+            //        };
+
+            //        using (var response = await client.SendAsync(request))
+            //        {
+            //            response.EnsureSuccessStatusCode();
+            //            var body = await response.Content.ReadAsStringAsync();
+            //            var json = JObject.Parse(body);
+
+            //            var teamName = json["response"][0]["team"]["name"].ToString();
+            //            var teamLogo = json["response"][0]["team"]["logo"].ToString();
+
+            //            return new Team
+            //            {
+            //                Id = favTeam,
+            //                Name = teamName,
+            //                Logo = teamLogo,
+            //            };
+
+            return new Team
+            {
+                Id = id,
+                Name = "Manchester United",
+                Logo = "https://media.api-sports.io/football/teams/33.png"
+            };
+
+        }  
+
+
     }
 }

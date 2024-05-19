@@ -13,7 +13,17 @@
             <Entry x:Name="email" Keyboard="Email"  Placeholder="Email" TextColor="#ccc" PlaceholderColor="#a0a0a0" ClearButtonVisibility="WhileEditing" Margin="0,0,0,10" />
             <Entry x:Name="userName" Placeholder="Nazwa użytkownika" TextColor="#ccc" PlaceholderColor="#a0a0a0" ClearButtonVisibility="WhileEditing" Margin="0,0,0,10"/>
             <Entry x:Name="password" IsPassword="True"  Placeholder="Hasło" TextColor="#ccc" PlaceholderColor="#a0a0a0" ClearButtonVisibility="WhileEditing"  Margin="0,0,0,30"/>
-            <Button
+            <Picker x:Name="teams" Title="Wybierz ulubioną drużynę" SelectedIndexChanged="teams_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Real Mardyt</x:String>
+                    <x:String>FC Barcelona</x:String>
+                    <x:String>Paris Saint Germain</x:String>
+                    <x:String>Bayern Monachium</x:String>
+                    <x:String>Manchester United</x:String>
+                </Picker.Items>
+            </Picker>
+
+                <Button
                 VerticalOptions="Center"
                 Text="Zaloguj się"
                 TextColor="#ccc"
