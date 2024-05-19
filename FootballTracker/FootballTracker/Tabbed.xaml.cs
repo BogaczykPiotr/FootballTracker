@@ -16,8 +16,35 @@ namespace FootballTracker
         public Tabbed()
         {
             InitializeComponent();
+            AddPages();
         }
 
-        
+        private void AddPages()
+        {
+            if(App.IsUserLoggedIn)
+            {
+                Children.Add(new NavigationPage(new LoggedPage())
+                {
+                    Title = "PROFIL",
+                    IconImageSource = new FontImageSource
+                    {
+                        FontFamily = "FASolid",
+                        Glyph = "\uf007"
+                    }
+                });
+            }
+            else
+            {
+                Children.Add(new NavigationPage(new LoginPage())
+                {
+                    Title = "ZALOGUJ",
+                    IconImageSource = new FontImageSource
+                    {
+                        FontFamily = "FASolid",
+                        Glyph = "\uf007"
+                    }
+                });
+            }
+        }
     }
 }

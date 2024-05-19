@@ -10,6 +10,7 @@ namespace FootballTracker.Services
     {
         Task<List<Match>> GetMatches();
         Task<Team> GetTeamName(int id);
+        Task<List<Match>> GetMatchByFavTeam(int id);
         //Task<JToken> GetApiResult();
     }
 }

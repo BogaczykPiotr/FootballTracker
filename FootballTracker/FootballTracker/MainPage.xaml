@@ -13,43 +13,43 @@
 
         <StackLayout BackgroundColor="#161616" Margin="15,0,15,10" Orientation="Horizontal" Padding="20, 20, 20, 20">
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,0,30,0">
+            <StackLayout x:Name="prevMatch" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,0,30,0">
                 <StackLayout HorizontalOptions="StartAndExpand">
                     <Frame CornerRadius="1000" HeightRequest="50" WidthRequest="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
-                        <Image Source="" Aspect="AspectFill"/>
+                        <Image Source="{Binding HomeLogo}" Aspect="AspectFill"/>
                     </Frame>
-                    <Label Text="Team 1" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+                    <Label Text="{Binding Home}" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                    <Label Text="2 : 1" TextColor="#a0a0a0" FontSize="18"/>
+                    <Label Text="{Binding Result}" TextColor="#a0a0a0" FontSize="18"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="EndAndExpand">
                     <Frame CornerRadius="1000" HeightRequest="50" WidthRequest="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
-                        <Image Source=""/>
+                        <Image Source="{Binding AwayLogo}"/>
                     </Frame>
-                    <Label Text="Team 1" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+                    <Label Text="{Binding Away}" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
                 </StackLayout>
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <StackLayout x:Name="prevMatch2" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <StackLayout HorizontalOptions="StartAndExpand">
                     <Frame CornerRadius="1000" HeightRequest="50" WidthRequest="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
-                        <Image Source="" Aspect="AspectFill"/>
+                        <Image Source="{Binding HomeLogo}" Aspect="AspectFill"/>
                     </Frame>
-                    <Label Text="Team 1" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+                    <Label Text="{Binding Home}" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                    <Label Text="2 : 1" TextColor="#a0a0a0" FontSize="18"/>
+                    <Label Text="{Binding Result}" TextColor="#a0a0a0" FontSize="18"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="EndAndExpand">
                     <Frame CornerRadius="1000" HeightRequest="50" WidthRequest="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
-                        <Image Source=""/>
+                        <Image Source="{Binding AwayLogo}"/>
                     </Frame>
-                    <Label Text="Team 1" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+                    <Label Text="{Binding Away}" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
                 </StackLayout>
             </StackLayout>
         </StackLayout>
@@ -58,12 +58,12 @@
 
         <StackLayout BackgroundColor="#161616" Orientation="Vertical" VerticalOptions="FillAndExpand" Margin="15,0,15,10">
             
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20, 90, 20, 60">
+            <StackLayout x:Name="nMatch" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20, 90, 20, 60">
                 <StackLayout HorizontalOptions="StartAndExpand">
                     <Frame CornerRadius="1000" HeightRequest="100" WidthRequest="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,10">
-                        <Image Source="" Aspect="AspectFill"/>
+                        <Image Source="{Binding HomeLogo}" Aspect="AspectFill"/>
                     </Frame>
-                    <Label Text="Team 1" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+                    <Label Text="{Binding Home}" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
@@ -72,9 +72,9 @@
 
                 <StackLayout HorizontalOptions="EndAndExpand">
                     <Frame CornerRadius="1000" HeightRequest="100" WidthRequest="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,10">
-                        <Image Source=""/>
+                        <Image Source="{Binding AwayLogo}"/>
                     </Frame>
-                    <Label Text="Team 1" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+                    <Label Text="{Binding Away}" TextColor="white" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="14"/>
                 </StackLayout>
             </StackLayout>
 

@@ -13,6 +13,20 @@ namespace FootballTracker.Models
         public string AwayLogo { get; set; }
         public string GoalAway{ get; set; }
         public string Time { get; set; }
+        public string Result
+        {
+            get
+            {
+                if (GoalHome != null && GoalAway != null)
+                {
+                    return $"{GoalHome} : {GoalAway}";
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 
 }

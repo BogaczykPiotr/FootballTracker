@@ -8,7 +8,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,6 +20,7 @@ namespace FootballTracker
 		public LoginPage ()
 		{
 			InitializeComponent ();
+            
 		}
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -33,7 +34,9 @@ namespace FootballTracker
 
             if (query.Any())
             {
-                App.Current.MainPage = new NavigationPage(new MainPage());
+                App.IsUserLoggedIn = true;
+                App.Current.MainPage = new NavigationPage(new Tabbed());
+                
             }
             else
             {
@@ -42,10 +45,10 @@ namespace FootballTracker
                     var result = await DisplayAlert("Błąd", "Błędny adres email lub hasło", "Ok", "Zamknij");
 
                     if (result)
-                        await Navigation.PushAsync(new LoginPage());
+                        App.Current.MainPage = new NavigationPage(new LoginPage());
 
                     else
-                        await Navigation.PushAsync(new LoginPage());
+                    App.Current.MainPage = new NavigationPage(new Tabbed());
                 });
             }
         }

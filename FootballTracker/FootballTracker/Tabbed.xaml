@@ -22,10 +22,4 @@
             <FontImageSource FontFamily="FARegular" Glyph="{x:Static fontAwesome:FontAwesomeIcons.Futbol}"/>
         </local:MatchesPage.IconImageSource>
     </local:MatchesPage>
-
-    <local:LoggedPage Title="PROFIL">
-        <local:LoggedPage.IconImageSource>
-            <FontImageSource FontFamily="FASolid" Glyph="{x:Static fontAwesome:FontAwesomeIcons.User}"/>
-        </local:LoggedPage.IconImageSource>
-    </local:LoggedPage>
 </TabbedPage>
